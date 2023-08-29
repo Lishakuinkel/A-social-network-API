@@ -5,7 +5,7 @@ module.exports = {
     //GET all thoughts
     async getThoughts(req, res){
         try {
-            const thoughtData = await Thought.find();
+            const thoughtData = await Thought.find({});
             res.json(thoughtData);
         } 
         catch (err) {
