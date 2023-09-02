@@ -45,6 +45,6 @@ The route above is used to POST a new reaction. If you wish to DELETE a certain 
 
 
 ## Contact me
-Email me at ltkuinkel@gmail.com
 
-My GitHub is ```https://github.com/Lishakuinkel```
+Email me at ltkuinkel@gmail.com
+GitHub: https://github.com/Lishakuinkel
