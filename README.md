@@ -42,3 +42,9 @@ http://localhost:3001/api/thoughts/:thoughtId/reactions
 ```
 
 The route above is used to POST a new reaction. If you wish to DELETE a certain reaction you can do so by adding an /:reactionId at the end of the link.
+
+
+## Contact me
+Email me at ltkuinkel@gmail.com
+
+My GitHub is ```https://github.com/Lishakuinkel```
