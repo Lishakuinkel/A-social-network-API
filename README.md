@@ -14,10 +14,8 @@ Link to the video : https://drive.google.com/file/d/1JmlfzziOEy4FrBrtvHzxu0XbDXl
 ## Installation 
 
 Clone the repo onto your local machine. 
-Then, in the terminal, install all dependencies using the following command :
-```npm install```
+Then, in the terminal, install all dependencies using ```npm install```
 
-Then start the server on local port. 
-```npm run start```
+Then start the server on local port ```npm run start```
 
 Test endpoints in API tester such as Insomnia
