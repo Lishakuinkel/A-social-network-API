@@ -1,4 +1,5 @@
 const { User, Thought } = require("../models");
+const { Types } = require('mongoose');
 
 module.exports = {
 
@@ -16,7 +17,7 @@ module.exports = {
     //GET thought by _id
     async getSingleThought(req, res){
         try {
-            const thoughtData = await Thought.findOne( {_id: req.params.thoughId} ).select("-__v");
+            const thoughtData = await Thought.findOne( {_id: req.params.thoughtId} ).select("-__v");
             
             if (!thoughtData){
                 return res.status(404).json({message:'no data found with that id'});
@@ -35,6 +36,7 @@ module.exports = {
             res.status(200).json(thoughtData);
         }
         catch (err) {
+            console.log(err);
             res.status(500).json(err);
         }
     },
@@ -63,7 +65,7 @@ module.exports = {
                 res.status(404).json({message: 'no thought data found with that id'});
             }
 
-            res.json(thoughtData);
+            res.status(200).json('Deletion successful');
         }
         catch (err) {
             res.status(500).json(err);
@@ -76,7 +78,7 @@ module.exports = {
             const thoughtData = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId},
                 { $addToSet: { reactions: req.body } },
-                { runValidators: true, new: true}
+                { runValidators: false, new: true}
             );
 
             if(!thoughtData){
@@ -95,13 +97,13 @@ module.exports = {
             const thoughtData = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId },
                 { $pull: { reactions: { reactionId : req.params.reactionId } } },
-                { runValidators: true, new: true }
+                { runValidators: false, new: true }
             );
             
             if(!thoughtData){
                 res.status(404).json({ message: 'No thought data found with this id'});
             }
-            res.status(200).json(thoughtData);
+            res.status(200).json('Deletion successful');
 
         }
         catch (err) {
