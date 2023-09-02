@@ -19,3 +19,26 @@ Then, in the terminal, install all dependencies using ```npm install```
 Then start the server on local port ```npm run start```
 
 Test endpoints in API tester such as Insomnia
+
+## Usage
+This application allows you to navigate different link routes that display data from the database.
+
+GET/POST routes:
+```
+http://localhost:3001/api/users
+http://localhost:3001/api/thoughts
+```
+
+PUT/DELETE routes:
+```
+http://localhost:3001/api/users/:userId
+http://localhost:3001/api/thoughts/:thoughtId
+```
+
+POST/DELETE routes:
+```
+http://localhost:3001/api/users/:userId/friends/:friendId
+http://localhost:3001/api/thoughts/:thoughtId/reactions
+```
+
+The route above is used to POST a new reaction. If you wish to DELETE a certain reaction you can do so by adding an /:reactionId at the end of the link.
