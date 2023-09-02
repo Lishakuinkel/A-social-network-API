@@ -31,11 +31,8 @@ module.exports = {
     //POST to create a new thought (push the created thought's _id to the associated user's thoughts array field)
     async createThought(req, res) {
         try {
-            const thoughtData = await User.findOneAndUpdate(
-                { _id: req.body.userId },
-                { $push: { thoughts: _id } },
-                { new: true });
-            res.json(thoughtData);
+            const thoughtData = await Thought.create(req.body);
+            res.status(200).json(thoughtData);
         }
         catch (err) {
             res.status(500).json(err);
@@ -48,7 +45,7 @@ module.exports = {
             const thoughtData = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId },
                 { $set: req.body },
-                { runValidators: true, New: true});
+                { runValidators: true, new: true});
             
             res.json(thoughtData);
         }
